@@ -20,6 +20,7 @@ class ScrollBox extends Component {
          position: 'relative'
       };
 
+
       const innerStyle = {
          width     : '100%',
          height    : '650px',
