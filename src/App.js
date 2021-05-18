@@ -1,5 +1,5 @@
-import React , {Component} from 'react';
-import ScrollBox from './ScrollBox';
+import React, { Component } from 'react';
+import IterationSample from './IterationSample';
 
 /*const App = () => {
    return (
@@ -29,12 +29,22 @@ const App = () => {
 }
 */
 
-class App extends Component{
+/*class App extends Component{
    render() {
       return (
          <div>
             <ScrollBox ref={(ref) => this.scrollBox = ref} />
             <button onClick={() => this.scrollBox.scrollToBottom()}>맨밑</button>
+         </div>
+      );
+   }
+}*/
+
+class App extends Component {
+   render() {
+      return (
+         <div>
+            <IterationSample />
          </div>
       );
    }
