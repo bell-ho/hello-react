@@ -8,6 +8,7 @@ const IterationSample = () => {
       { id: 3, text: 'snow' },
       { id: 4, text: 'wind' }
    ]);
+
    const [inputText, setInputText] = useState('');
    const [nextId, setNextId] = useState(5);
 
@@ -19,12 +20,21 @@ const IterationSample = () => {
          text: inputText
       });
 
-      setNextId(nextId + 1);
-      setNames(nextNames);
-      setInputText('');
+      setNextId(nextId + 1);  //nextId 값에 1을 더함
+      setNames(nextNames); //names값을 업데이트
+      setInputText(''); //inputText를 비움
    };
 
-   const namesList = names.map(name => <li key={name.id}>{name.text}</li>);
+   const onRemove = id => {
+      const nextNames = names.filter(name => name.id != id);
+      console.log(nextNames);
+      setNames(nextNames);
+   };
+
+   const namesList = names.map(name => (
+      <li key={name.id} onDoubleClick={() => onRemove(name.id)}>
+         {name.text}
+      </li>));
 
    return (
       <>
